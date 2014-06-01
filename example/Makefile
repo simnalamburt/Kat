@@ -1,8 +1,18 @@
-default: example
-all: example
+# Variables
+TARGET=example
 
-example: main.cpp
-	c++ -Wall -std=c++1y -lboost_system main.cpp -o example
+CPP = clang++
+CPPFLAGS = -Wall -std=c++1y
+LIBS = -lboost_system
+
+
+# Makefile scripts
+$(TARGET): main.cpp types.h
+	$(CPP) $< -o $@ $(CPPFLAGS) $(LIBS)
 
 clean:
-	rm -f example
+	rm -f $(TARGET)
+
+
+# Special targets
+.PHONY: clean
