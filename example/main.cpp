@@ -29,6 +29,7 @@ Content-Type: text/html;charset=utf-8
 </html>
 )"s;
 
+  cout.sync_with_stdio(false);
   cout << "Starting tcp server at \033[34m0.0.0.0:" << port << "\033[0m" << endl;
   cout << "Check this out with the command below" << endl;
   cout << endl;
