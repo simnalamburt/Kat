@@ -10,10 +10,36 @@ using           boost::asio::ip::tcp;
 using namespace boost::asio::error;
 
 
-int main()
-{
-  const unsigned short port = 4567;
-  const auto message = R"(HTTP/1.1 200 OK
+using byte = unsigned char;
+using sbyte = signed char;
+//    char
+using wchar = wchar_t;
+//    short
+using ushort = unsigned short;
+//    int
+using uint = unsigned int;
+using intptr = intptr_t;
+using uintptr = uintptr_t;
+//    long
+using ulong = unsigned long;
+using llong = long long;
+using ullong = unsigned long long;
+
+using int8 = int8_t;
+using int16 = int16_t;
+using int32 = int32_t;
+using int64 = int64_t;
+using int128 = __int128_t;
+
+using uint8 = uint8_t;
+using uint16 = uint16_t;
+using uint32 = uint32_t;
+using uint64 = uint64_t;
+using uint128 = __uint128_t;
+
+
+const auto port = ushort(4567);
+const auto message = R"(HTTP/1.1 200 OK
 Server: Kat
 Content-Type: text/html;charset=utf-8
 
@@ -30,6 +56,9 @@ Content-Type: text/html;charset=utf-8
 </html>
 )"s;
 
+
+auto main() -> int
+{
   cout.sync_with_stdio(false);
   cout << "Starting tcp server at \033[34m0.0.0.0:" << port << "\033[0m" << endl;
   cout << "Check this out with the command below" << endl;
@@ -41,12 +70,13 @@ Content-Type: text/html;charset=utf-8
   {
     io_service service;
     auto acceptor = tcp::acceptor(service, tcp::endpoint(tcp::v4(), port));
-    for(;;)
+    for (;;)
     {
-      tcp::socket socket(service);
+      auto socket = tcp::socket(service);
       acceptor.accept(socket);
 
-      thread([&](auto socket) {
+      thread([&](auto socket)
+      {
         const auto endpoint = socket.remote_endpoint();
         const auto client = "\033[32m" + endpoint.address().to_string() + ':' + to_string(endpoint.port()) + "\033[0m";
         cout << client << " has been connected" << endl;
