@@ -1,4 +1,4 @@
-#include <kat/kat.hpp>
+#include <kat.hpp>
 
 auto main() -> int
 {
