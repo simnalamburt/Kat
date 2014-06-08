@@ -1,5 +1,7 @@
 #pragma once
 
+namespace kat {
+
 //    bool
 using byte = uint8_t;
 using sbyte = int8_t;
@@ -31,3 +33,5 @@ using uint128 = __uint128_t;
 //    float
 //    double
 using ldouble = long double;
+
+} // namespace kat

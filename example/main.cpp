@@ -12,6 +12,7 @@ using namespace boost::asio;
 using           boost::asio::ip::tcp;
 using namespace boost::asio::error;
 using boost_error = boost::system::error_code;
+using namespace kat;
 
 
 constexpr auto port = ushort(4567);

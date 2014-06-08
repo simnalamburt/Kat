@@ -2,10 +2,11 @@
 #include <string>
 #include <boost/asio.hpp>
 
-namespace std
+namespace kat {
+
+auto to_string(const boost::asio::ip::tcp::endpoint& endpoint) -> std::string
 {
-  auto to_string(const boost::asio::ip::tcp::endpoint& endpoint) -> string
-  {
-    return "\033[32m" + endpoint.address().to_string() + ':' + to_string(endpoint.port()) + "\033[0m";
-  }
+  return "\033[32m" + endpoint.address().to_string() + ':' + std::to_string(endpoint.port()) + "\033[0m";
 }
+
+} // namespace kat
