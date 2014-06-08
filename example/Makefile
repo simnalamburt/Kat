@@ -23,4 +23,4 @@ clean:
 
 
 # Special targets
-.PHONY: clean
+.PHONY: all debug release clean
