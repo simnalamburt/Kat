@@ -3,9 +3,8 @@
 #include <array>
 #include <boost/asio.hpp>
 #include <boost/asio/spawn.hpp>
-
-#include "types.h"
-#include "helpers.h"
+#include <kat/types.hpp>
+#include <kat/helpers.hpp>
 
 
 using namespace std;

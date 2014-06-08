@@ -1,9 +1,10 @@
 # Variables
-TARGET=example
+TARGET = example
 
 CPP = clang++
 CPPFLAGS = -Wall -std=c++1y
-LIBS = -lboost_system -lboost_coroutine
+INC = -I./../include
+LIB = -lboost_system -lboost_coroutine
 
 
 # Makefile scripts
@@ -15,8 +16,8 @@ debug: $(TARGET)
 release: CPPFLAGS += -O3
 release: $(TARGET)
 
-$(TARGET): main.cpp types.h helpers.h
-	$(CPP) $< -o $@ $(CPPFLAGS) $(LIBS)
+$(TARGET): main.cpp
+	$(CPP) $< -o $@ $(CPPFLAGS) $(LIB) $(INC)
 
 clean:
 	rm -f $(TARGET)
