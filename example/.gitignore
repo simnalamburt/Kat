@@ -25,3 +25,4 @@
 ### CUSTOM ###
 # Ignore compiler output
 example
+example.dSYM

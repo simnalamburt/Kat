@@ -7,6 +7,14 @@ LIBS = -lboost_system
 
 
 # Makefile scripts
+all: release
+
+debug: CPPFLAGS += -DDEBUG -g
+debug: $(TARGET)
+
+release: CPPFLAGS += -O3
+release: $(TARGET)
+
 $(TARGET): main.cpp types.h helpers.h
 	$(CPP) $< -o $@ $(CPPFLAGS) $(LIBS)
 
