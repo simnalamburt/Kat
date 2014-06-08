@@ -1,8 +1,8 @@
 #pragma once
 
 //    bool
-using byte = unsigned char;
-using sbyte = signed char;
+using byte = uint8_t;
+using sbyte = int8_t;
 //    char
 using wchar = wchar_t;
 //    short

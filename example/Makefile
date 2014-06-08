@@ -7,7 +7,7 @@ LIBS = -lboost_system
 
 
 # Makefile scripts
-$(TARGET): main.cpp types.h
+$(TARGET): main.cpp types.h helpers.h
 	$(CPP) $< -o $@ $(CPPFLAGS) $(LIBS)
 
 clean:
