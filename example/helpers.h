@@ -1,16 +1,6 @@
 #pragma once
 #include <string>
 #include <boost/asio.hpp>
-#include <boost/intrusive_ptr.hpp>
-
-namespace boost
-{
-  template <typename T>
-  auto intrusive_from_raw(T* ptr) -> intrusive_ptr<T>
-  {
-    return intrusive_ptr<T>(ptr);
-  }
-}
 
 namespace std
 {

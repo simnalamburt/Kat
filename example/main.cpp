@@ -3,8 +3,6 @@
 #include <array>
 #include <boost/asio.hpp>
 #include <boost/asio/spawn.hpp>
-#include <boost/intrusive_ptr.hpp>
-#include <boost/smart_ptr/intrusive_ref_counter.hpp>
 
 #include "types.h"
 #include "helpers.h"
@@ -14,9 +12,6 @@ using namespace std;
 using namespace boost::asio;
 using           boost::asio::ip::tcp;
 using namespace boost::asio::error;
-using           boost::intrusive_ptr;
-using           boost::intrusive_ref_counter;
-using           boost::intrusive_from_raw;
 using boost_error = boost::system::error_code;
 
 
