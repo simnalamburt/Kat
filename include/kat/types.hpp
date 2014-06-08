@@ -2,36 +2,21 @@
 
 namespace kat {
 
-//    bool
-using byte = uint8_t;
-using sbyte = int8_t;
-//    char
-using wchar = wchar_t;
-//    short
-using ushort = unsigned short;
-//    int
-using uint = unsigned int;
-using intptr = intptr_t;
-using uintptr = uintptr_t;
-//    long
-using ulong = unsigned long;
-using llong = long long;
-using ullong = unsigned long long;
+/** Short hands of arithmetic types defined by the language **/
+using byte    = unsigned char;
+using sbyte   =   signed char;
 
-using int8 = int8_t;
-using int16 = int16_t;
-using int32 = int32_t;
-using int64 = int64_t;
-using int128 = __int128_t;
+//ing short   =          short     int
+using ushort  = unsigned short     int;
+//ing int     =                    int
+using uint    = unsigned           int;
+//ing long    =          long      int
+using ulong   = unsigned long      int;
+using llong   =          long long int;
+using ullong  = unsigned long long int;
 
-using uint8 = uint8_t;
-using uint16 = uint16_t;
-using uint32 = uint32_t;
-using uint64 = uint64_t;
-using uint128 = __uint128_t;
-
-//    float
-//    double
+//ing float   = float;
+//ing double  = double;
 using ldouble = long double;
 
 } // namespace kat
