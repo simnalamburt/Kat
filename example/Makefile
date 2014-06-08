@@ -3,7 +3,7 @@ TARGET=example
 
 CPP = clang++
 CPPFLAGS = -Wall -std=c++1y
-LIBS = -lboost_system
+LIBS = -lboost_system -lboost_coroutine
 
 
 # Makefile scripts
